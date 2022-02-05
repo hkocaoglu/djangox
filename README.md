@@ -101,7 +101,7 @@ Contributions, issues and feature requests are welcome! See [CONTRIBUTING.md](ht
 
 Give a ⭐️  if this project helped you!
 
-## License
+## Licenses
 
 [The MIT License](LICENSE)
 
