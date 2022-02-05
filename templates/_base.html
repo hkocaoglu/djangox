@@ -16,6 +16,9 @@
 
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
 {% endblock %}
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 </head>
 
 <body>
@@ -54,6 +57,22 @@
       <p>Default content...</p>
     {% endblock content %}
   </div>
+
+  <div id="vue-app">
+    [[ message ]]
+  </div>
+
+  <script>
+  
+  var app = new Vue({
+    delimiters: ["[[", "]]"],
+    el: '#vue-app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+  
+  </script>
 
   <footer class="footer">
     <div class="container">
