@@ -1,0 +1,78 @@
+.fvl-search-select-wrapper {
+  @apply p-2;
+}
+
+.fvl-search-select-label {
+  @apply block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2;
+}
+
+.fvl-search-select {
+  @apply block appearance-none w-full bg-gray-200 border border-gray-200 text-left text-gray-700 py-3 px-4 pr-8 rounded leading-tight;
+}
+
+.fvl-search-select-placeholder {
+  @apply text-gray-600;
+}
+
+.fvl-search-select-wrapper:focus-within .fvl-search-select {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(218, 225, 231, 0.8);
+}
+
+.fvl-search-select:hover {
+  @apply cursor-pointer;
+}
+
+.fvl-search-select-input-wrapper {
+  @apply relative;
+}
+
+.fvl-search-select-carret {
+  @apply pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700;
+  transition: transform 0.2s cubic-bezier(0.62, 0.28, 0.23, 0.99);
+}
+
+.fvl-dropdown-is-open .fvl-search-select-carret {
+  transform: rotate(180deg);
+}
+
+.fvl-search-select-carret svg {
+  @apply fill-current h-4 w-4;
+}
+
+.fvl-search-select-dropdown {
+  @apply block absolute z-30 w-full bg-gray-800 text-white rounded p-2 shadow-md;
+}
+
+.fvl-search-select-dropdown-input {
+  @apply appearance-none w-full bg-gray-700 text-white border border-gray-700 rounded py-2 px-2 mb-2 leading-tight;
+}
+
+.fvl-search-select-dropdown-input:focus {
+  outline: none !important;
+}
+
+.fvl-search-select-dropdown-options {
+  @apply overflow-y-auto;
+  max-height: 200px;
+}
+
+.fvl-search-select-dropdown-option {
+  @apply block w-full text-white rounded py-2 px-2 my-px;
+}
+
+.fvl-search-select-dropdown-option-highlighted {
+  @apply bg-teal-600;
+}
+
+.fvl-search-select-dropdown-option:hover {
+  @apply bg-gray-700 cursor-pointer;
+}
+
+.fvl-search-dropdown-option-disabled {
+  @apply opacity-25;
+}
+
+.fvl-search-dropdown-option-disabled:hover {
+  @apply cursor-default;
+}
