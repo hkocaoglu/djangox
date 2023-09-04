@@ -1,0 +1,39 @@
+{% extends '_base.html' %}
+
+{% block title %}Work page{% endblock %}
+
+{% block content %}
+ 
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">ID : </span>
+    <input class="form-control" type="text" value=" {{ object.id }}" aria-label="Disabled input example" readonly>
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Konu : </span>
+    <input class="form-control" type="text" value=" {{ object.name }}" aria-label="Disabled input example" readonly>
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Açıklama : </span>
+    <textarea class="form-control fixed" id="exampleFormControlTextarea1" rows="10" readonly>{{ object.detail }}</textarea>
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1"> ilk Kayıt : </span>
+    <input class="form-control" type="text" value=" {{ object.dateCreate }}" aria-label="Disabled input example" readonly>
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Güncelleme : </span>
+    <input class="form-control" type="text" value=" {{ object.dateUpdate }}" aria-label="Disabled input example" readonly>
+</div>
+
+<div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+  </div>
+<a href="{% url 'work_list' %}" class="btn btn-primary " role="button"> OK </a>
+ 
+{% endblock content %}

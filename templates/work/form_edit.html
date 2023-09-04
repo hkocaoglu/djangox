@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% block title %}About page{% endblock %}
+
+{% block content %}
+
+<h4>Kayıt Düzenle</h4>
+
+
+<form method="post"class="form-control">
+    <div class="form-group">
+        {% csrf_token %}
+        <label for="exampleFormControlTextarea1">İşin Adı</label>
+        {{ form.name   }}
+        <div class="p-2 "></div>
+        <label for="exampleFormControlTextarea1">İşin Detayı</label>
+        {{ form.detail }}
+        <div class="p-2 "></div>
+    </div>
+    <!-- {{ form.as_p }} -->
+    <button class="btn btn-outline-success" type="submit">Güncelle</button>
+    <a href="{% url 'work_list' %}" class="btn btn-outline-primary " role="button">İptal</a>
+</form>
+
+{% endblock content %}

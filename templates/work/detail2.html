@@ -1,0 +1,86 @@
+{% extends '_base.html' %}
+
+{% block title %}Work page{% endblock %}
+
+{% block content %}
+ 
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label ">ID : </label>
+            <input class="form-control" type="text" value=" {{ object.id }}" aria-label="Disabled input example" readonly>
+        </div>
+        
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label">Konu : </label>
+            <input class="form-control" type="text" value=" {{ object.name }}" aria-label="Disabled input example" readonly>
+        </div>
+        
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label">Açıklama : </label>
+            <textarea class="form-control fixed" id="exampleFormControlTextarea1" rows="10" readonly>{{ object.detail }}</textarea>
+        </div>
+
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label"> İlk Kayıt : </label>
+            <input class="form-control" type="text" value=" {{ object.dateCreate }}" aria-label="Disabled input example" readonly>
+        </div>
+        
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label">Güncelleme : </label>
+            <input class="form-control" type="text" value=" {{ object.dateUpdate }}" aria-label="Disabled input example" readonly>
+        </div>
+        
+        <div class=" mb-3 row">
+            <label  class="col-2 col-form-label">Duruşta Yapılacak : </label>
+        {% if object.todo_later == True %}
+
+            <input class="form-check-input" type="checkbox" checked id="defaultCheck1" disabled>
+            <label class="form-check-label" for="defaultCheck1">
+
+        {% else %}
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+
+        {% endif %}
+
+        </div>
+
+        <div class="mb-3 row">
+            <label  class="col-2 col-form-label">Duruş Var mı ? : </label>
+           
+                {% if object.stoppage == True %}
+
+                    <input class="form-check-input" type="checkbox" checked id="defaultCheck1" disabled>
+                    <label class="form-check-label" for="defaultCheck1">
+
+                {% else %}
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                {% endif %}
+     
+        </div>
+
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label">Duruş Süresi : </label>
+            <input class="form-control" type="text" value=" {{ object.stopage_duration }}" aria-label="Disabled input example" readonly>
+        </div>
+
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label">Loasyon : </label>
+            <input class="form-control" type="text" value=" {{ object.location }}" aria-label="Disabled input example" readonly>
+        </div>
+
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label">Ünite : </label>
+            <input class="form-control" type="text" value=" {{ object.location.area }}" aria-label="Disabled input example" readonly>
+        </div>
+
+        <div class="input-group mb-3 row">
+            <label  class="col-2 col-form-label">Ekipman : </label>
+            <input class="form-control" type="text" value=" {{ object.equipment }}" aria-label="Disabled input example" readonly>
+        </div>
+
+        <a href="{% url 'work_list' %}" class="btn btn-primary " role="button"> OK </a>
+
+
+          
+{% endblock content %}

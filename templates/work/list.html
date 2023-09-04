@@ -1,0 +1,44 @@
+{% extends '_base.html' %}
+
+{% block title %}Work page{% endblock %}
+
+{% block content %}
+<table class="table table-striped table-bordered table-hover table-hover-cursor">
+    <thead>
+      <tr scope="col">
+        <th scope="col-2">#</th>
+        <th scope="col">İşin Adı</th>
+        <th scope="col">Açıklama</th>
+        <th scope="col">Oluşturma Tarihi</th>
+        <th scope="col">Güncelleme Tarihi</th>
+        <th class="col-4" scope="col">##</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        {% for work in works %}
+        <tr>
+          <td class="text-truncate">{{ work.id }}</td>
+          <td class="text-truncate">{{ work.name }}</td>
+          <td class="text-truncate a">{{ work.detail }}</td>
+          <td class="text-truncate">{{ work.dateCreate }}</td>
+          <td class="text-truncate">{{ work.dateUpdate }}</td>
+          <td >
+ 
+              <a href="{% url 'work_create' %}" class="btn btn-primary" role="button"> <i class="fa-solid fa-plus fa-xl"></i></a>
+              <a href="{% url 'work_delete' work.pk %}" class="btn btn-danger" role="button"> <i class="fa-solid fa-xmark fa-xl"></i></a>
+              <a href="{% url 'work_update' work.pk %}" class="btn btn-warning" role="button"> <i class="fa-solid fa-pencil fa-xl"></i></a>
+              <a href="{% url 'work_detail' work.pk %}" class="btn btn-info" role="button"> <i class="fa-solid fa-info fa-xl"></i></a>
+          </td>
+
+        </tr>
+
+        {% empty %}
+        <h3>No works yet.</h3>
+        <a href="{% url 'work_create' %}">Add work</a>
+        {% endfor %}
+
+    </tbody>
+  </table>
+
+{% endblock content %}
